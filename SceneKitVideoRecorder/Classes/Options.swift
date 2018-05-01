@@ -21,10 +21,13 @@ extension SceneKitVideoRecorder {
     public var deleteFileIfExists: Bool
     public var useMicrophone: Bool
     public var antialiasingMode: SCNAntialiasingMode
+    public var scale = UIScreen.main.nativeScale
+    public var screenWidth =  UIScreen.main.bounds.width
+    public var screenHeight =  UIScreen.main.bounds.height
 
     public static var `default`: Options {
-        return Options(timeScale: 1000,
-                 videoSize: CGSize(width: 720, height: 1280),
+        return Options(timeScale: 600,
+                 videoSize: CGSize(width: screenWidth * scale, height: screenHeight * scale),
                  fps: 60,
                  outputUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "output.mp4"),
                  audioOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "audio.m4a"),

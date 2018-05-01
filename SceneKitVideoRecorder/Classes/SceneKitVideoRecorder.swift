@@ -240,7 +240,7 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
   }
 
   private func getCurrentCMTime() -> CMTime {
-    return CMTimeMakeWithSeconds(CACurrentMediaTime(), 100000);
+    return CMTimeMakeWithSeconds(CACurrentMediaTime(), 600);
   }
 
   private func getAppendTime() -> CMTime {
@@ -332,11 +332,10 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
 
     let aVideoAsset : AVAsset = AVAsset(url: videoUrl)
     let aAudioAsset : AVAsset = AVAsset(url: audioUrl)
-
-//<<<<<<< HEAD
-//    mutableCompositionVideoTrack.append(mixComposition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid)!)
-//    mutableCompositionAudioTrack.append( mixComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!)
-//=======
+    //<<<<<<< HEAD
+    //    mutableCompositionVideoTrack.append(mixComposition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid)!)
+    //    mutableCompositionAudioTrack.append( mixComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!)
+    //=======
     mutableCompositionVideoTrack.append(mixComposition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid)!)
     mutableCompositionAudioTrack.append(mixComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!)
 
@@ -368,23 +367,23 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
     let assetExport: AVAssetExportSession = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)!
     assetExport.outputFileType = AVFileType.mp4
     assetExport.outputURL = savePathUrl
+
     assetExport.shouldOptimizeForNetworkUse = true
 
     assetExport.exportAsynchronously { () -> Void in
       switch assetExport.status {
-
-      case AVAssetExportSessionStatus.completed:
-        promise.success(())
-      case  AVAssetExportSessionStatus.failed:
-        let assetExportErrorMessage = "failed \(String(describing: assetExport.error))"
-        let error = NSError(domain: self.errorDomain, code: ErrorCode.assetExport.rawValue, userInfo: ["Reason": assetExportErrorMessage])
-        promise.failure(error)
-      case AVAssetExportSessionStatus.cancelled:
-        let assetExportErrorMessage = "cancelled \(String(describing: assetExport.error))"
-        let error = NSError(domain: self.errorDomain, code: ErrorCode.assetExport.rawValue, userInfo: ["Reason": assetExportErrorMessage])
-        promise.failure(error)
-      default:
-        promise.success(())
+        case AVAssetExportSessionStatus.completed:
+          promise.success(())
+        case  AVAssetExportSessionStatus.failed:
+          let assetExportErrorMessage = "failed \(String(describing: assetExport.error))"
+          let error = NSError(domain: self.errorDomain, code: ErrorCode.assetExport.rawValue, userInfo: ["Reason": assetExportErrorMessage])
+          promise.failure(error)
+        case AVAssetExportSessionStatus.cancelled:
+          let assetExportErrorMessage = "cancelled \(String(describing: assetExport.error))"
+          let error = NSError(domain: self.errorDomain, code: ErrorCode.assetExport.rawValue, userInfo: ["Reason": assetExportErrorMessage])
+          promise.failure(error)
+        default:
+          promise.success(())
       }
     }
 
