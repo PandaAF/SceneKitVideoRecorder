@@ -30,7 +30,7 @@ extension SceneKitVideoRecorder {
                      audioOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "audio.m4a"),
                      videoOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "video.mp4"),
                      fileType: AVFileType.m4v.rawValue,
-                     codec: AVVideoCodecH264,
+                     codec: AVVideoCodecHEVC,
                      deleteFileIfExists: true,
                      useMicrophone: true,
                      antialiasingMode: .multisampling4X)
