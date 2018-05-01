@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SceneKitVideoRecorder"
-  s.version      = "1.5.1"
+  s.version      = "1.5.2"
   s.summary      = "Record videos of SceneKit and ARKit"
 
   # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 It supports iOS10 or later on Metal supported devices.
                    DESC
 
-  s.homepage     = "https://github.com/svtek/SceneKitVideoRecorder"
+  s.homepage     = "https://github.com/PandaAF/SceneKitVideoRecorder"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -81,7 +81,7 @@ It supports iOS10 or later on Metal supported devices.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/svtek/SceneKitVideoRecorder.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/PandaAF/SceneKitVideoRecorder.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
