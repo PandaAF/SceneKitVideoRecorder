@@ -54,10 +54,10 @@ It supports iOS10 or later on Metal supported devices.
   #  profile URL.
   #
 
-  s.author             = { "marc" => "m@panda.af" }
+  s.author             = { "okaris" => "ok@okaris.com" }
   # Or just: s.author    = "Omer Karisman"
   # s.authors            = { "Omer Karisman" => "ok@okaris.com" }
-  s.social_media_url   = "https://twitter.com/TheMarcAMartin"
+  s.social_media_url   = "http://twitter.com/okarisman"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
