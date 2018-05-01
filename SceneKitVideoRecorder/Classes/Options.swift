@@ -42,9 +42,12 @@ extension SceneKitVideoRecorder {
         AVVideoCodecKey: codec,
         AVVideoWidthKey: videoSize.width,
         AVVideoHeightKey: videoSize.height,
-        AVVideoExpectedSourceFrameRateKey: fps,
         AVVideoCompressionPropertiesKey: [
           AVVideoAverageBitRateKey: UIScreen.main.bounds.width * UIScreen.main.bounds.height * 11.4,
+          AVVideoExpectedSourceFrameRateKey: fps,
+          AVVideoAverageNonDroppableFrameRateKey: fps,
+          AVVideoH264EntropyModeKey: AVVideoH264EntropyModeCAVLC,
+          AVVideoProfileLevelKey: AVVideoProfileLevelH264BaselineAutoLevel,
           AVVideoMaxKeyFrameIntervalKey: 1
         ]
       ]
