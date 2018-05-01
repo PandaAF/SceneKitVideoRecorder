@@ -35,14 +35,14 @@ extension SceneKitVideoRecorder {
                  deleteFileIfExists: true,
                  useMicrophone: true,
                  antialiasingMode: .multisampling4X)
-
     }
 
     var assetWriterVideoInputSettings: [String : Any] {
       return [
         AVVideoCodecKey: codec,
         AVVideoWidthKey: videoSize.width,
-        AVVideoHeightKey: videoSize.height
+        AVVideoHeightKey: videoSize.height,
+        AVVideoExpectedSourceFrameRateKey: fps
       ]
     }
 
@@ -52,6 +52,9 @@ extension SceneKitVideoRecorder {
         AVSampleRateKey: 44100.0,
         AVNumberOfChannelsKey: 1,
         AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        AVVideoCompressionPropertiesKey: [
+          AVVideoAverageBitRateKey: UIScreen.main.bounds.width * UIScreen.main.bounds.height * 11.4,
+        ]
       ]
     }
 
