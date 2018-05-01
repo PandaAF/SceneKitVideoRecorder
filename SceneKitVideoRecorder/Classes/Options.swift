@@ -23,32 +23,18 @@ extension SceneKitVideoRecorder {
     public var antialiasingMode: SCNAntialiasingMode
 
     public static var `default`: Options {
-    if #available(iOS 11.0, *){
-            return Options(timeScale: 1000,
-                     videoSize: CGSize(width: 720, height: 1280),
-                     fps: 60,
-                     outputUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "output.mp4"),
-                     audioOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "audio.m4a"),
-                     videoOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "video.mp4"),
-                     fileType: AVFileType.m4v.rawValue,
-                     codec: AVVideoCodecHEVC,
-                     deleteFileIfExists: true,
-                     useMicrophone: true,
-                     antialiasingMode: .multisampling4X)
-    }else{
-      return Options(timeScale: 1000,
-               videoSize: CGSize(width: 720, height: 1280),
-               fps: 60,
-               outputUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "output.mp4"),
-               audioOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "audio.m4a"),
-               videoOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "video.mp4"),
-               fileType: AVFileType.m4v.rawValue,
-               codec: AVVideoCodecH264,
-               deleteFileIfExists: true,
-               useMicrophone: true,
-               antialiasingMode: .multisampling4X)
+        return Options(timeScale: 1000,
+                 videoSize: CGSize(width: 720, height: 1280),
+                 fps: 60,
+                 outputUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "output.mp4"),
+                 audioOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "audio.m4a"),
+                 videoOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "video.mp4"),
+                 fileType: AVFileType.m4v.rawValue,
+                 codec: AVVideoCodecH264,
+                 deleteFileIfExists: true,
+                 useMicrophone: true,
+                 antialiasingMode: .multisampling4X)
 
-      }
     }
 
     var assetWriterVideoInputSettings: [String : Any] {
