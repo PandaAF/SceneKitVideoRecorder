@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 It supports iOS10 or later on Metal supported devices.
                    DESC
 
-  s.homepage     = "https://github.com/svtek/SceneKitVideoRecorder"
+  s.homepage     = "https://github.com/PandaAF/SceneKitVideoRecorder"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -54,10 +54,10 @@ It supports iOS10 or later on Metal supported devices.
   #  profile URL.
   #
 
-  s.author             = { "okaris" => "ok@okaris.com" }
+  s.author             = { "marc" => "m@panda.af" }
   # Or just: s.author    = "Omer Karisman"
   # s.authors            = { "Omer Karisman" => "ok@okaris.com" }
-  s.social_media_url   = "http://twitter.com/okarisman"
+  s.social_media_url   = "https://twitter.com/TheMarcAMartin"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -81,7 +81,7 @@ It supports iOS10 or later on Metal supported devices.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/svtek/SceneKitVideoRecorder.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/PandaAF/SceneKitVideoRecorder.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

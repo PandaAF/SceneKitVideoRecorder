@@ -35,7 +35,7 @@ extension SceneKitVideoRecorder {
                      useMicrophone: true,
                      antialiasingMode: .multisampling4X)
     }
-    
+
     var assetWriterVideoInputSettings: [String : Any] {
       return [
         AVVideoCodecKey: codec,
@@ -43,16 +43,16 @@ extension SceneKitVideoRecorder {
         AVVideoHeightKey: videoSize.height
       ]
     }
-    
+
     var assetWriterAudioInputSettings: [String : Any] {
       return [
         AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-        AVSampleRateKey: 12000,
+        AVSampleRateKey: 44100.0,
         AVNumberOfChannelsKey: 1,
         AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
       ]
     }
-    
+
     var sourcePixelBufferAttributes: [String : Any] {
       return [
         kCVPixelBufferPixelFormatTypeKey as String: NSNumber(value: kCVPixelFormatType_32ARGB),
@@ -62,4 +62,3 @@ extension SceneKitVideoRecorder {
     }
   }
 }
-
