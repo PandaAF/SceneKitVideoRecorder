@@ -360,7 +360,7 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
 
     let mutableVideoComposition : AVMutableVideoComposition = AVMutableVideoComposition()
     //mutableVideoComposition.frameDuration = CMTimeMake(1, Int32(self.options.fps))
-    mutableVideoComposition.frameDuration = CMTime(value: 1, timescale: self.options.fps)
+    mutableVideoComposition.frameDuration = CMTime(value: 1, timescale: Int32(self.options.fps))
     mutableVideoComposition.renderSize = self.options.videoSize
 
     let savePathUrl : URL = self.options.outputUrl
