@@ -45,6 +45,7 @@ extension SceneKitVideoRecorder {
         AVVideoExpectedSourceFrameRateKey: fps,
         AVVideoCompressionPropertiesKey: [
           AVVideoAverageBitRateKey: UIScreen.main.bounds.width * UIScreen.main.bounds.height * 11.4,
+          AVVideoMaxKeyFrameIntervalKey: 1
         ]
       ]
     }
