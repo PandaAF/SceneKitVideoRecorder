@@ -240,7 +240,7 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
   }
 
   private func getCurrentCMTime() -> CMTime {
-    return CMTimeMakeWithSeconds(CACurrentMediaTime(), 1000);
+    return CMTimeMakeWithSeconds(CACurrentMediaTime(), 100000);
   }
 
   private func getAppendTime() -> CMTime {
