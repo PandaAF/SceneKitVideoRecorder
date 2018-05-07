@@ -123,7 +123,8 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
     recordingSession = AVAudioSession.sharedInstance()
 
     do {
-      try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [.defaultToSpeaker])
+        let options: AVAudioSessionCategoryOptions = [.allowAirPlay, .allowBluetooth, .allowBluetoothA2DP, .duckOthers]
+      try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: options)
       try recordingSession.setActive(true)
       recordingSession.requestRecordPermission() { allowed in
         DispatchQueue.main.async {
